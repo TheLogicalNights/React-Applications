@@ -3,7 +3,8 @@ import ExpenseItems from "./components/ExpenseItems";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <h1>Lets get started !</h1>
       <ExpenseItems></ExpenseItems>
     </div>
   );
