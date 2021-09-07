@@ -9,7 +9,7 @@ function App() {
     { title: "New Keyboard", amount: 1100, date: new Date() },
   ];
   return (
-    <div className="App App-header">
+    <div className="App-header">
       <h1>Lets get started !</h1>
       <Expenses expense={expense} />
     </div>
