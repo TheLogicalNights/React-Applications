@@ -9,9 +9,15 @@ function App() {
     { title: "Bike Servicing", amount: 900, date: new Date() },
     { title: "New Keyboard", amount: 1100, date: new Date() },
   ];
+
+  const NewExpenseHandler = (expense) => {
+    console.log("in App.js");
+    console.log(expense);
+  };
+
   return (
     <div className="App-header">
-      <NewExpense />
+      <NewExpense addNewExpense={NewExpenseHandler} />
       <Expenses expense={expense} />
     </div>
   );
