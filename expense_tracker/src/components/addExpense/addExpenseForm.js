@@ -6,6 +6,8 @@ const AddExpenseForm = (props) => {
   const [amount, setChangedAmount] = useState("");
   const [date, setChangedDate] = useState("");
 
+  const [showForm, setDisplayFormFlag] = useState(false);
+
   const titleChangedHandler = (event) => {
     setChangedTitle(event.target.value);
   };
@@ -32,9 +34,24 @@ const AddExpenseForm = (props) => {
     setChangedTitle("");
     setChangedAmount("");
     setChangedDate("");
-
-    console.log(data.id);
+    setDisplayFormFlag(false);
   };
+
+  const displayForm = () => {
+    setDisplayFormFlag(true);
+  };
+
+  const hideForm = () => {
+    setDisplayFormFlag(false);
+  };
+
+  if (showForm == false) {
+    return (
+      <div>
+        <button onClick={displayForm}>Add New Expense</button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={submitHandler}>
@@ -65,6 +82,7 @@ const AddExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={hideForm}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
