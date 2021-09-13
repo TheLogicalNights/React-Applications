@@ -22,6 +22,7 @@ const AddExpenseForm = (props) => {
     event.preventDefault();
 
     const data = {
+      id: Math.floor(Math.random() * 10000000000000000 + 1),
       title: title,
       amount: amount,
       date: new Date(date),
@@ -31,6 +32,8 @@ const AddExpenseForm = (props) => {
     setChangedTitle("");
     setChangedAmount("");
     setChangedDate("");
+
+    console.log(data.id);
   };
 
   return (
