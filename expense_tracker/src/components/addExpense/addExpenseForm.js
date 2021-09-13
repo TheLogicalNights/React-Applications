@@ -45,7 +45,7 @@ const AddExpenseForm = (props) => {
     setDisplayFormFlag(false);
   };
 
-  if (showForm == false) {
+  if (showForm === false) {
     return (
       <div>
         <button onClick={displayForm}>Add New Expense</button>
