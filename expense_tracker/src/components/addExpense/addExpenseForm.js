@@ -26,7 +26,7 @@ const AddExpenseForm = (props) => {
     const data = {
       id: Math.floor(Math.random() * 10000000000000000 + 1),
       title: title,
-      amount: amount,
+      amount: +amount,
       date: new Date(date),
     };
 
