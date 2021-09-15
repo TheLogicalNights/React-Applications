@@ -80,7 +80,7 @@ const AddExpenseForm = (props) => {
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
-          <label style={{ color: !titleValid ? "red" : "black" }}>Title</label>
+          <label>Title</label>
           <input
             type="text"
             value={title}
@@ -91,9 +91,7 @@ const AddExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__control">
-          <label style={{ color: !amountValid ? "red" : "black" }}>
-            Amount
-          </label>
+          <label>Amount</label>
           <input
             type="number"
             min="0.01"
@@ -106,7 +104,7 @@ const AddExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__control">
-          <label style={{ color: !dateValid ? "red" : "black" }}>Date</label>
+          <label>Date</label>
           <input
             type="date"
             min="2019-01-01"
