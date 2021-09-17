@@ -79,40 +79,29 @@ const AddExpenseForm = (props) => {
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
-        <div className="new-expense__control">
+        <div className={`new-expense__control ${!titleValid ? "invalid" : ""}`}>
           <label>Title</label>
-          <input
-            type="text"
-            value={title}
-            style={{
-              border: !titleValid ? "3px solid red" : "1px solid black",
-            }}
-            onChange={titleChangedHandler}
-          />
+          <input type="text" value={title} onChange={titleChangedHandler} />
         </div>
-        <div className="new-expense__control">
+        <div
+          className={`new-expense__control ${!amountValid ? "invalid" : ""}`}
+        >
           <label>Amount</label>
           <input
             type="number"
             min="0.01"
             step="0.01"
             value={amount}
-            style={{
-              border: !amountValid ? "3px solid red" : "1px solid black",
-            }}
             onChange={amountChangedHandler}
           />
         </div>
-        <div className="new-expense__control">
+        <div className={`new-expense__control ${!dateValid ? "invalid" : ""}`}>
           <label>Date</label>
           <input
             type="date"
             min="2019-01-01"
             max="2022-12-31"
             value={date}
-            style={{
-              border: !dateValid ? "3px solid red" : "1px solid black",
-            }}
             onChange={dateChangedHandler}
           />
         </div>
